@@ -1,0 +1,98 @@
+Ecommerce Project
+-----------------------------
+
+1. Backend
+-----------------
+technologies: node, express, mongodb (mongoose)
+
+create APIs for ecomerce Project.
+
+ step 1: Model:
+
+	user:
+		id,name,address,phone,email, password
+	category:
+		id,name,decs
+	product:
+		id,name,price,quntity,category_id(ref)
+	order:
+		id, amount, products: ref [], user: userId(ref)
+	cart:   id, products:[], userId
+
+	-----------------------------------------------
+	review: id,productId(ref),userId(ref),comments,rating
+
+  step 2: route:
+
+	   user: /register
+		 /login
+		 /get user By Id (getting user profile)
+		 /updateUser (update profile)
+	         /delete user (cal from admin side if admin wants to delete user: advanced)
+		 /getAllUsers (call from admin to see all registered user)
+
+	   product:
+
+		/addProduct
+		/updateProduct
+		/get productById
+		/getProductByCategory
+		/deleteProduct
+		/getAllProducts
+	
+	   Category:
+	
+		/addCategory
+		/updateCategory
+		/deleteCategory
+
+	   Cart:
+		
+		/addproducttocart
+		/update cart
+		/delete products from cart (deleteById)
+		/getByUserId (show cart)
+
+	   Review:
+		/addReview
+		/updateReview
+		/getAllreviews
+		/deleteReview
+
+	   Order:
+
+		/getOrdersByUserId
+		/show all order (from admin side)
+		
+	step: Controllers:
+		where you can keep your logics and call them in your routes when it is required.
+	step: jwt authetication to generate the token and remember user
+		create /protectedRoute to use everytime when the user is trying to acces any other route
+
+2. FrontEnd:
+
+	React Application
+
+	Now you need to create components
+
+		--cart
+		--order
+		--review
+		--profile
+
+	integarate with pages (components)
+
+	--Home
+	--login
+	--register
+	--showallproduct page
+	--productage
+
+
+
+
+
+
+
+
+	
