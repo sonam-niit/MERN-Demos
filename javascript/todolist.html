@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center text-bg-primary">My Todo List App</h1>
+        <div class="row">
+            <div class="col">
+                <input type="text" placeholder="enter todo" id="todo" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary mt-3" onclick="addTodo()">Add</button>
+            </div>
+        </div>
+        <ul class="list-group mt-3" id="todos"></ul>
+    </div>
+    </div>
+
+    <script>
+        let arr = [];
+        function addTodo() {
+            const todo = document.getElementById('todo').value;
+            arr.push(todo);
+            console.log("Todo Added")
+            getAll();
+            document.getElementById('todo').value = ""
+        }
+        function removeTodo(name) {
+            const foundIndex = arr.findIndex(value => value == name);
+            arr.splice(foundIndex, 1);
+            getAll();
+        }
+        //sum=sum+1 // sum+=1
+        function getAll() {
+            let data = '';
+            for (let x of arr) {
+                data += `<li class='list-group-item'>${x} 
+                    <button class='btn btn-danger float-end' onclick='removeTodo("${x}")'>
+                        X
+                    </button></li>`;
+            }
+            document.getElementById('todos').innerHTML = data;
+        }
+        getAll();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

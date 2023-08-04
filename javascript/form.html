@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="mb-3">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="fname" placeholder="John"
+            onkeyup="clearData()">
+        </div>
+        <div class="mb-3">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lname" placeholder="Doe"
+            onkeyup="clearData()">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="myFunction()">Submit</button>
+    
+        <input type="text" id="result" class="form-control mt-3">
+    </div>
+    <h1 id="greeting"></h1>
+    <h3 id="query"></h3>
+    
+    <script>
+        function myFunction() {
+            console.log("Function Called");
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+            const message = document.getElementById('message').value;
+            const greetingMessage = `Welcome ${fname} ${lname}`;
+            const query = `Your Query is as below <br>${message}`;
+            document.getElementById('greeting').innerHTML = greetingMessage;
+            document.getElementById('query').innerHTML = query;
+            document.getElementById('result').value = greetingMessage
+        }
+
+        function clearData(){
+            document.getElementById('result').value =
+            `Hello ${document.getElementById('fname').value}
+            ${document.getElementById('lname').value}`
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

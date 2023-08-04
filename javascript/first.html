@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="showAlert()">Click Alert</button>
+    <button onclick="display()">Click Display</button>
+
+    <script>
+        function showAlert() {
+            alert("Hello World!");
+        }
+        function display() {
+            let name="sonam";
+            let email="sonam@gmail.com"
+           document.write("Hello Everyone...!<br>");
+           document.write(`Name: ${name}<br>`);
+           document.write(`Email: ${email}<br>`);
+           console.log("Function called")
+        }
+    </script>
+</body>
+</html>

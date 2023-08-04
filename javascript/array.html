@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const array = [18, 22, 43, 14, 85, 46, 17, 13, 90, 10];
+
+        //print array using for loop
+        for (let i = 0; i < array.length; i++) {
+            console.log(array[i]);
+        }
+        //print using for of loop // I indicates original value
+        for (let i of array) {
+            console.log(i);
+        }
+        //print using for in loop //i indicates index number
+        for (let i in array) {
+            console.log(array[i]);
+        }
+
+        const students=[
+            {id:1,name:"sonam",email:"sonam@gmail.com"},
+            {id:2,name:"alexa",email:"alexa@gmail.com"},
+            {id:3,name:"preeti",email:"pr@gmail.com"}
+        ]
+        for (let obj of students) {
+            for(let key in obj){
+                console.log(key+" "+obj[key]);
+            }
+        }
+    </script>
+</body>
+
+</html>

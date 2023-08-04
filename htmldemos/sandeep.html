@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+        .delete-button{         
+            color:white;
+            width: 50px;
+            float: right;
+            position:absolute;
+            right: 1px;  
+        }
+    </style>
+    <title>ContactList</title>
+</head>
+<body>
+    <div class="container bg-primary mt-5">
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Name</label>
+              <input type="text" class="form-control mr-sm-2" id="exampleInputEmail1" placeholder="Name" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Mobile No</label>
+              <input type="number" class="form-control" placeholder="Mobile No" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="createContact()">Submit</button>
+            </form>
+            <!-- <div class="row"> -->
+          <div id="createcontact"></div>
+            <!-- </div> -->
+    </div>
+    <script>
+        let list = [];
+        function createContact(){
+            let name = document.getElementById('exampleInputEmail1').value;
+            let mobile = document.getElementById('exampleInputPassword1').value;
+            let check = document.getElementById('exampleCheck1').checked;
+            let contact = {
+                name: name,
+                mobile: mobile,
+                check: check
+            }
+            list.push(contact);
+            console.log(list);
+            getAll1();
+            
+        }
+        function getAll(){
+            data='';
+            for(let i of list){
+                data+=`
+                <div class="col-md-3 py-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">${i.name}</h5>
+                            <p class="card-text">${i.mobile}</p>
+                        </div>
+                    <div>`
+            }
+
+            
+            document.getElementById('createcontact').innerHTML = data;
+        }
+        function deleteData(item){
+            let index = list.findIndex(value=>value.name==item);
+            console.log(index);
+            list.splice(index,1);
+            getAll1();
+        }
+        function getAll1(){
+            const d=new Date();
+            let data= "<div class='row'>"
+            data= data+ list.map(value=>{
+                return `
+                    <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <button class="btn btn-danger card-img-top delete-button" onclick='deleteData("${value.name}")' type="button">X</button>
+                        <div class="card-body">
+                            
+                            <h5 class="card-title">${value.name}</h5>
+                            <p class="card-text">${value.mobile}</p>
+                            <p class="card-text">${d.getHours()}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            `
+            })
+            data= data+"</div>"
+            document.getElementById('createcontact').innerHTML = data;
+        }
+        const a={x:1,y:2}
+        const b=a;
+        b.y=3
+        console.log(a,b);
+
+    </script>
+</body>
+</html>

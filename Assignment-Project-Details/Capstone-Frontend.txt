@@ -1,0 +1,37 @@
+Ecommerce Page
+------------------------
+common pages
+     header.html
+     footer.html
+
+other pages
+
+	index.html--> include header from header file, cover image with slogan, featured product slider
+			(4 products on big screens, 2 products for md screens, 1 for sm screens)
+
+	productpages
+		1.allproducts.html
+		2.allwomens.html
+		3.womdresses.html
+		4.womskirts.html
+		5.wompants.html
+		6.allmens.html
+		7.menshirts.html
+		8.menpants.html
+		9.menhoodies.html
+		10.kids.html
+
+	(header, title, show products 6 in bigscreens, 3 in md, 2 in small devices, 2 rows are enough,
+	footer)
+
+	contact.html
+
+		(header, contact section(left hand side 6 col: image, right side 6 columns form), footer)
+
+	Login.html (header, login section (login form in the center), footer)
+		user will enter admin@admin.com & password is 123456 show alert message login successful.
+
+
+	Cart.html (header,cart(title, product details(8 col),summary(4 col)),footer)
+
+	
