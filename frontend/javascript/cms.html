@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="customer.js"></script>
+    <script>
+        while(true){
+            const input=prompt("Enter 1 to add Customer, 2 for See All, 3 to Remove Customer");
+
+            if(input==1){
+                const id= prompt("Enter your Id");
+                const name=prompt("Enter your name");
+                const email=prompt("Enter your Email");
+                addCustomer({id,name,email})
+            }else if(input ==2){
+                console.log(getAllCustomers());
+            }else if(input==3){
+                const email=prompt("Enter your Email");
+                removeCustomer(email);
+            }else{
+                console.log("Kindly enter the proper Input");
+            }
+
+            let op= prompt("Enter Yes to continue");
+            if(op=='Yes' || op=='yes'){
+                continue;
+            }else{
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

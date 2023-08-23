@@ -5,6 +5,7 @@ dotenv.config();
 const app= express();
 const PORT= process.env.PORT || 7000
 
+app.use("/images",express.static('images'))
 app.use("/api/user",UserRoutes)
 
 app.listen(PORT,()=>{

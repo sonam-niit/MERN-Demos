@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add New Customer</h1>
+    <input type="number" id="id" placeholder="id">
+    <input type="text" id="name" placeholder="name">
+    <input type="email" id="email" placeholder="Email">
+
+    <button onclick="addCust()">Add Customer</button>
+    <h1>List All Customer</h1>
+    <table>
+        <thead><tr><th>Id</th><th>Name</th><th>Email</th></tr></thead>
+        <tbody id="data"></tbody>
+    </table>
+    <script src="customer.js"></script>
+    <script>
+        function addCust(){
+            const id= document.getElementById("id").value;
+            const name= document.getElementById("name").value;
+            const email= document.getElementById("email").value;
+
+            addCustomer({id,name,email});
+            alert("Customer Registered");
+            document.getElementById("id").value=""
+            document.getElementById("name").value=""
+            document.getElementById("email").value=""
+            display()
+        }
+
+        function display(){
+            const result= getAllCustomers();
+            let d="";
+            for(let u of result){
+                d+= `<tr><td>${u.id}</td><td>${u.name}</td><td>${u.email}</td></tr>`;
+            }
+            document.getElementById("data").innerHTML=d;
+        }
+    </script>
+</body>
+</html>
