@@ -1,0 +1,152 @@
+Git: Version Control
+----------------------------
+
+Application: A (V1)
+
+Updated: A, B  (V2)
+
+Updated: A,B,C   (V3)
+
+-----------------------------------------
+Centralized version Control System
+
+Git Configuration:
+
+System Configuration
+User Configuration
+Project Level Configuration
+
+Global Configuration 
+-------------------------------------
+
+use flag: --global
+
+>git config --global user.name "sonam-niit"
+>git config --global user.email "sonam@gmail.com"
+
+Check the added configuration.
+
+>git config --list
+
+Local Configration for perticular Folder
+----------------------------------------------
+use the above command only but without --global flag
+
+also, make sure the folder must be a git repository.
+How to make it?
+
+open the folder in cmd and execute below command
+>git init
+
+(this will initialize git repository to that folder)
+(it will create one hidden .git folder to that location)
+
+======================================================================
+git commands
+
+1. create one folder called capstoneProject, open the folder in cmd and execute below command
+
+>git init (initialize an empty repository to your working directory)
+
+2. to see the tracked and untracked files status you can execute below command
+
+>git status
+
+3. Add perticular file to git staging area.
+
+>git add index.html (it will add index.html to staging area)
+
+4. What if I want to add all filse to staging area
+
+> git add .  (It will add all untracked files to staging area)
+
+5. Remove files from Staging area
+>git rm --cached index.html
+
+6. If you added some files to your staging area and may it was deleted from your working directory you can get it back from staging area.
+
+>git restore index.html
+
+7. If you want to remove all files from staging area then use reset command
+
+>git add . (add to staging area)
+
+>git reset . (undo the above transation)
+
+
+8. git commit -m "Home Page Completed"
+
+9. git log (see all commits)
+
+10. create Repository to your github account
+
+11. git branch -M main (it will change main branch as default branch)
+
+12. Set Up origin
+
+	git remote add origin https://github.com/sonam-niit/Mumbai-Tourism.git (Your origin changes according to your git repo)
+
+13. git push origin master
+
+for the very first time it will ask you for the authentication
+
+select the default authetication and it will open github login in browser
+
+enter your credentials, if it validates then just see the data will get pushed to the github repository
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
